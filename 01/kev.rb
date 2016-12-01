@@ -5,6 +5,7 @@ class Direction
     @dir_point = 0
     @x = 0
     @y = 0
+    @path = []
   end 
 
   def direction
@@ -12,12 +13,15 @@ class Direction
   end
 
   def move(dist)
-    @x = @x + dist if direction == "E"
-    @x = @x - dist if direction == "W"
-    @y = @y + dist if direction == "N"
-    @y = @y - dist if direction == "S"
-    puts "Moving #{dist}"
-    puts "Now at #{@x},#{@y}"
+    1.upto(dist) do |step|
+      @x = @x + 1 if direction == "E"
+      @x = @x - 1 if direction == "W"
+      @y = @y + 1 if direction == "N"
+      @y = @y - 1 if direction == "S"
+      puts "Now at #{@x},#{@y}"
+      puts "Visited #{@x},#{@y} before! It's #{total} blocks away!" if @path.include? [@x,@y]
+      @path << [@x,@y]
+    end
   end
 
   def l
