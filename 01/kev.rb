@@ -41,7 +41,7 @@ class Direction
   end
 end
 
-a=IO.read('input.txt').split(", ")
+a=IO.read('kev.txt').split(", ")
 
 dir = Direction.new
 
