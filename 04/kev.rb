@@ -27,6 +27,7 @@ class Room
   end
 
   def unencrypted_name(times = @sector, name = @ename)
+    return unencrypted_name(times%26,name) if times > 26
     return name if times == 0
     unencrypted_name(
       times - 1,
