@@ -9,8 +9,9 @@ until password2[0..7].count("^ ") == 8
     password << h[5]
     index = h[5].to_i
     password2[index] = h[6] if h[5] =~ /[0-7]/ and password2[index] == ' '
+    puts password2
   end
   n += 1
 end
-puts "Part One: #{password}"
-puts "Part Two: #{password2[1..8]}"
+puts "Part One: #{password}[0..7]"
+puts "Part Two: #{password2[0..7]}"
